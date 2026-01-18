@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Transactions</title>
+        <link rel="stylesheet" href="../transaction/transaction.css"/>
+    </head>
+    <body>
+        <div class="sidebar">
+            <ul>
+                <li><a href="../dashboard/dashboard.html">Dashboard</a></li>
+                <li><a href="../requestForm/request.html">Document Requests</a></li>
+                <li><a href="../transaction/transaction.html">Transactions</a></li>
+            </ul>
+        </div>
+        
+        <div class="header">
+            <img src="../assets/verifitorlogo.png" class="logo">
+            <img src="../assets/bell_1.png" class="notification">
+            
+            <div class="profile-container">
+                <img src="../assets/user_2.png" class="user" onclick="toggleMenu()">
+
+                <div class="profile-dropdown" id="profileMenu">
+                    <a href="../adminProfile/adminProfile.html">Profile</a>
+                    <a href="../adminlogin/adminlogin.html">Logout</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="search-bar">
+                <input type="text" placeholder="Search" class="search-bar-input"/>
+                <button type="submit">Search</button>
+            </div>
+
+            <div class="transaction-section">
+                <table class="transaction-table">
+                    <thead>
+                        <tr>
+                            <th>Transaction ID</th>
+                            <th>Request ID</th>
+                            <th>Requester Name</th>
+                            <th>Document Type</th>
+                            <th>Date and Time Processed</th>
+                            <th>Performed by</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>TXN001</td>
+                            <td>REQ001</td>
+                            <td>John Doe</td>
+                            <td>Transcript of Records</td>
+                            <td>2024-06-15 10:30 AM</td>
+                            <td>Admin User</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Requests</title>
+        <link rel="stylesheet" href="../requestForm/request.css"/>
+    </head>
+    <body>
+        <div class="sidebar">
+            <ul>
+                <li><a href="../dashboard/dashboard.html">Dashboard</a></li>
+                <li><a href="../requestForm/request.html">Document Requests</a></li>
+                <li><a href="../transaction/transaction.html">Transactions</a></li>
+            </ul>
+        </div>
+
+        <div class="header">
+            <img src="../assets/verifitorlogo.png" class="logo">
+            <img src="../assets/bell_1.png" class="notification">
+            
+            <div class="profile-container">
+                <img src="../assets/user_2.png" class="user" onclick="toggleMenu()">
+
+                <div class="profile-dropdown" id="profileMenu">
+                    <a href="../adminProfile/adminProfile.html">Profile</a>
+                    <a href="../adminlogin/adminlogin.html">Logout</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="search-bar">
+                <input type="text" placeholder="Search" class="search-bar-input"/>
+                <button type="submit">Search</button>
+            </div>
+
+            <div class="filter">
+                <select id="status" name="status">
+                    <option value="all">All</option>
+                    <option value="pending">Pending</option>
+                    <option value="approved">Approved</option>
+                    <option value="rejected">Rejected</option>
+                </select>
+            </div>
+
+            <div class="request-section">
+                <table class="request-table">
+                    <thead>
+                        <tr>
+                            <th>Request ID</th>
+                            <th>Requester Name</th>
+                            <th>Document Type</th>
+                            <th>Date Requested</th>
+                            <th>Status</th>
+                        </tr>
+                        <tbody>
+                            <tr>
+                                <td>001</td>
+                                <td>John Doe</td>
+                                <td>TOR</td>
+                                <td>2024-06-01</td>
+                                <td>Pending</td>
+                            </tr>
+                        </tbody>
+                    </thead>
+                </table>
+            </div>
+        </div>
+
+        <script src="../requestForm/request.js"></script>
+    </body>
+</html>
