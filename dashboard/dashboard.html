@@ -9,14 +9,18 @@
     <body>
         <div class="sidebar">
             <ul>
+                <img src="../assets/verifitorlogo.png" class="logo">
+
                 <li><a href="../dashboard/dashboard.html">Dashboard</a></li>
                 <li><a href="../requestForm/request.html">Document Requests</a></li>
                 <li><a href="../transaction/transaction.html">Transactions</a></li>
+                <li><a href="">Notifications</a></li>
+                <li><a href="../adminProfile/adminProfile.html">Profile</a></li>
             </ul>
         </div>
 
         <div class="header">
-            <img src="../assets/verifitorlogo.png" class="logo">
+            <h2 class="page-title">Dashboard</h2>
             <img src="../assets/bell_1.png" class="notification">
             
             <div class="profile-container">
@@ -31,91 +35,97 @@
         </div>
 
         <div class="main-content">
-            <div class="top-grid">
+            
+            <!-- Stats Row -->
+            <div class="stats-row">
                 <div class="card">
-                    <h3>Total Requests</h3>
-                    <p>150</p>
+                    <h4>Total Requests</h4>
+                    <p>50</p>
                 </div>
                 <div class="card">
-                    <h3>Approved Requests</h3>
-                    <p>120</p>
+                    <h4>Pending Requests</h4>
+                    <p>50</p>
                 </div>
                 <div class="card">
-                    <h3>Pending Requests</h3>
-                    <p>20</p>
+                    <h4>In Process Requests</h4>
+                    <p>50</p>
                 </div>
                 <div class="card">
-                    <h3>Rejected Requests</h3>
+                    <h4>Approved Requests</h4>
+                    <p>250</p>
+                </div>
+                <div class="card">
+                    <h4>Released Documents</h4>
                     <p>10</p>
                 </div>
+                <div class="card">
+                    <h4>Blockchain Submissions</h4>
+                    <p>250</p>
+                </div>
+            </div>
 
-                <div class="notificationPanel">
-                    <h2>Notification</h2>
+            <div class="middle-row">
+
+                <!-- Blockchain Activity Panel -->
+                <div class="panel">
+                    <h3>Blockchain Activity Panel</h3>
+                    <p>Total Records: 250</p>
+
+                    <table border="1">
+                        <tr>
+                            <th>Request ID</th>
+                            <th>Transaction Hash</th>
+                        </tr>
+                        <tr>
+                            <td>REQ1234-2026</td>
+                            <td>0x1234...967</td>
+                        </tr>
+                        <tr>
+                            <td>REQ1235-2026</td>
+                            <td>0x5678...321</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Notifications Panel -->
+                <div class="panel">
+                    <h3>Notifications</h3>
                     <ul>
-                        <li>3 new TOR requests awaiting verification</li>
-                        <li>User account approved</li>
-                        <li>Blockchain sync completed</li>
-                        <li>3 new TOR requests awaiting verification</li>
-                        <li>User account approved</li>
-                        <li>Blockchain sync completed</li>
-                        <li>3 new TOR requests awaiting verification</li>
-                        <li>User account approved</li>
-                        <li>Blockchain sync completed</li>
-                        <li>3 new TOR requests awaiting verification</li>
-                        <li>User account approved</li>
-                        <li>Blockchain sync completed</li>
+                        <li>3 new transcript requests pending approval</li>
+                        <li>Failed blockchain submission</li>
+                        <li>REQ1234-2026 waiting for 2 days</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="table-box">
-                <h2>Pending Document Requests</h2>
-                <table class="dashboard-table">
-                    <thead>
-                        <tr>
-                            <th>Request ID</th>
-                            <th>Student Name</th>
-                            <th>Document Type</th>
-                            <th>Date Requested</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>REQ-001</td>
-                            <td>Juan Dela Cruz</td>
-                            <td>Transcript of Records</td>
-                            <td>Jan 15, 2026</td>
-                            <td>Pending</td>
-                        </tr>
-                    </tbody>
+            <!-- Pending Requests Table -->
+            <div class="panel">
+                <h3>Pending Requests</h3>
+                <table border="1">
+                    <tr>
+                        <th>Request ID</th>
+                        <th>Name</th>
+                        <th>Status</th>
+                        <th>Date Requested</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td>REQ1234-2026</td>
+                        <td>Alyssa Jane Cruz</td>
+                        <td>Pending</td>
+                        <td>January 30, 2026</td>
+                        <td><button>View</button></td>
+                    </tr>
+                    <tr>
+                        <td>REQ1235-2026</td>
+                        <td>Alyssa Jane Cruz</td>
+                        <td>Pending</td>
+                        <td>January 30, 2026</td>
+                        <td><button>View</button></td>
+                    </tr>
                 </table>
             </div>
 
-            <div class="table-box">
-                <h3>Recent Blockchain Transactions</h3>
-
-                <table class="dashboard-table">
-                    <thead>
-                        <tr>
-                            <th>Transaction Hash</th>
-                            <th>Block No.</th>
-                            <th>Record</th>
-                            <th>Date</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>0xA92F...E3B</td>
-                            <td>45231</td>
-                            <td>TOR - 2021-001</td>
-                            <td>Jan 14, 2026</td>
-                            <td>Confirmed</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
         </div>
 
         <script src="../dashboard/dashboard.js"></script>

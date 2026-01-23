@@ -9,18 +9,29 @@
     <body>
         <div class="sidebar">
             <ul>
+                <img src="../assets/verifitorlogo.png" class="logo">
+
                 <li><a href="../dashboard/dashboard.html">Dashboard</a></li>
                 <li><a href="../requestForm/request.html">Document Requests</a></li>
                 <li><a href="../transaction/transaction.html">Transactions</a></li>
+                <li><a href="">Notifications</a></li>
+                <li><a href="../adminProfile/adminProfile.html">Profile</a></li>
             </ul>
         </div>
 
         <div class="header">
-            <img src="../assets/verifitorlogo.png" class="logo">
+            <h2 class="page-title">Profile</h2>
             <img src="../assets/bell_1.png" class="notification">
-            <a href="../adminProfile/adminProfile.html">
-                <img src="../assets/user_2.png" class="user">
-            </a>
+            
+            <div class="profile-container">
+                <img src="../assets/user_2.png" class="user" onclick="toggleMenu()">
+
+                <div class="profile-dropdown" id="profileMenu">
+                    <a href="../adminProfile/adminProfile.html">Profile</a>
+                    <a href="">Settings</a>
+                    <a href="../adminlogin/adminlogin.html">Logout</a>
+                </div>
+            </div>
         </div>
 
         <div class="profile-icon-container">
@@ -29,7 +40,6 @@
         
         <div class="profile-container">
             <button type="button" class="btn-edit">Edit Profile</button>
-            <input type="text" id="name" name="name" placeholder="Admin Name" required/>
 
             <button type="button" class="btn-logout">Logout</button>
         </div>
