@@ -14,7 +14,7 @@
                 <li><a href="../dashboard/dashboard.html">Dashboard</a></li>
                 <li><a href="../requestForm/request.html">Document Requests</a></li>
                 <li><a href="../transaction/transaction.html">Transactions</a></li>
-                <li><a href="">Notifications</a></li>
+                <li><a href="../notifications/notification.html">Notifications</a></li>
                 <li><a href="../adminProfile/adminProfile.html">Profile</a></li>
             </ul>
         </div>
@@ -35,18 +35,21 @@
         </div>
 
         <div class="main-content">
-            <div class="search-bar">
-                <input type="text" placeholder="Search" class="search-bar-input"/>
-                <button type="submit">Search</button>
-            </div>
+            <div class="controls-container">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search here" class="search-input"/>
+                    <button class="btn-search">Search</button>
+                </div>
 
-            <div class="filter">
-                <select id="status" name="status">
-                    <option value="all">All</option>
-                    <option value="pending">Pending</option>
-                    <option value="approved">Approved</option>
-                    <option value="rejected">Rejected</option>
-                </select>
+                <div class="filter-box">
+                    <i class="fa-solid fa-filter filter-icon"></i>
+                    <select class="filter-select">
+                        <option value="all">All</option>
+                        <option value="pending">Pending</option>
+                        <option value="processing">Processing</option>
+                        <option value="approved">Approved</option>
+                    </select>
+                </div>
             </div>
 
             <div class="request-section">
@@ -58,14 +61,40 @@
                             <th>Document Type</th>
                             <th>Date Requested</th>
                             <th>Status</th>
+                            <th></th>
                         </tr>
                         <tbody>
                             <tr>
-                                <td>001</td>
+                                <td>REQ1234-2026</td>
                                 <td>John Dela Cruz</td>
-                                <td>TOR</td>
-                                <td>2024-06-01</td>
-                                <td>Pending</td>
+                                <td>Transcrip of Record</td>
+                                <td>January 30, 2026</td>
+                                <td><span class="status-pill processing">PROCESSING</span></td>
+                                <td><button class="btn-view">View Request</button></td>
+                            </tr>
+                            <tr>
+                                <td>REQ1234-2026</td>
+                                <td>Alyssa Jane Cruz</td>
+                                <td>Transcript of Record</td>
+                                <td>January 30, 2026</td>
+                                <td><span class="status-pill pending">PENDING</span></td>
+                                <td><button class="btn-view">View Request</button></td>
+                            </tr>
+                            <tr>
+                                <td>REQ1234-2026</td>
+                                <td>Alyssa Jane Cruz</td>
+                                <td>Transcript of Record</td>
+                                <td>January 30, 2026</td>
+                                <td><span class="status-pill pending">PENDING</span></td>
+                                <td><button class="btn-view">View Request</button></td>
+                            </tr>
+                            <tr>
+                                <td>REQ1234-2026</td>
+                                <td>Alyssa Jane Cruz</td>
+                                <td>Transcript of Record</td>
+                                <td>January 30, 2026</td>
+                                <td><span class="status-pill approved">Approved</span></td>
+                                <td><button class="btn-view">View Request</button></td>
                             </tr>
                         </tbody>
                     </thead>

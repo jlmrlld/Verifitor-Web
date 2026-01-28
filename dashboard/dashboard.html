@@ -14,7 +14,7 @@
                 <li><a href="../dashboard/dashboard.html">Dashboard</a></li>
                 <li><a href="../requestForm/request.html">Document Requests</a></li>
                 <li><a href="../transaction/transaction.html">Transactions</a></li>
-                <li><a href="">Notifications</a></li>
+                <li><a href="../notifications/notification.html">Notifications</a></li>
                 <li><a href="../adminProfile/adminProfile.html">Profile</a></li>
             </ul>
         </div>
@@ -36,11 +36,13 @@
 
         <div class="main-content">
             
-            <!-- Stats Row -->
             <div class="stats-row">
                 <div class="card">
-                    <h4>Total Requests</h4>
-                    <p>50</p>
+                    <span class="card-icon">📄</span>
+                    <div>
+                        <h4>Total Requests</h4>
+                        <p>50</p>
+                    </div>
                 </div>
                 <div class="card">
                     <h4>Pending Requests</h4>
@@ -66,15 +68,17 @@
 
             <div class="middle-row">
 
-                <!-- Blockchain Activity Panel -->
-                <div class="panel">
+                <div class="panel-blockchain-transaction">
                     <h3>Blockchain Activity Panel</h3>
                     <p>Total Records: 250</p>
 
-                    <table border="1">
-                        <tr>
+                    <table>
+                        <!--<tr>
                             <th>Request ID</th>
                             <th>Transaction Hash</th>
+                        </tr>-->
+                        <tr>
+                            <th colspan="2">Latest Transactions:</th>
                         </tr>
                         <tr>
                             <td>REQ1234-2026</td>
@@ -84,11 +88,18 @@
                             <td>REQ1235-2026</td>
                             <td>0x5678...321</td>
                         </tr>
+                        <tr>
+                            <td>REQ1235-2026</td>
+                            <td>0x5678...321</td>
+                        </tr>
+                        <tr>
+                            <td>REQ1235-2026</td>
+                            <td>0x5678...321</td>
+                        </tr>
                     </table>
                 </div>
 
-                <!-- Notifications Panel -->
-                <div class="panel">
+                <div class="panel-notification">
                     <h3>Notifications</h3>
                     <ul>
                         <li>3 new transcript requests pending approval</li>
@@ -98,28 +109,41 @@
                 </div>
             </div>
 
-            <!-- Pending Requests Table -->
-            <div class="panel">
-                <h3>Pending Requests</h3>
-                <table border="1">
+            <div class="panel-pending-requests">
+                <!--<h3>Pending Requests</h3>-->
+                <table>
                     <tr>
                         <th>Request ID</th>
                         <th>Name</th>
                         <th>Status</th>
                         <th>Date Requested</th>
-                        <th>Action</th>
+                        <th></th>
                     </tr>
                     <tr>
                         <td>REQ1234-2026</td>
                         <td>Alyssa Jane Cruz</td>
-                        <td>Pending</td>
+                        <td><span class="status">Pending</span></td>
                         <td>January 30, 2026</td>
                         <td><button>View</button></td>
                     </tr>
                     <tr>
                         <td>REQ1235-2026</td>
                         <td>Alyssa Jane Cruz</td>
-                        <td>Pending</td>
+                        <td><span class="status">Pending</span></td>
+                        <td>January 30, 2026</td>
+                        <td><button>View</button></td>
+                    </tr>
+                    <tr>
+                        <td>REQ1235-2026</td>
+                        <td>Alyssa Jane Cruz</td>
+                        <td><span class="status">Pending</span></td>
+                        <td>January 30, 2026</td>
+                        <td><button>View</button></td>
+                    </tr>
+                    <tr>
+                        <td>REQ1235-2026</td>
+                        <td>Alyssa Jane Cruz</td>
+                        <td><span class="status">Pending</span></td>
                         <td>January 30, 2026</td>
                         <td><button>View</button></td>
                     </tr>

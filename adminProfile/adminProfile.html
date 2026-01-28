@@ -14,7 +14,7 @@
                 <li><a href="../dashboard/dashboard.html">Dashboard</a></li>
                 <li><a href="../requestForm/request.html">Document Requests</a></li>
                 <li><a href="../transaction/transaction.html">Transactions</a></li>
-                <li><a href="">Notifications</a></li>
+                <li><a href="../notifications/notification.html">Notifications</a></li>
                 <li><a href="../adminProfile/adminProfile.html">Profile</a></li>
             </ul>
         </div>
@@ -33,15 +33,48 @@
                 </div>
             </div>
         </div>
-
-        <div class="profile-icon-container">
-            <img src="../assets/user.png" class="profile-icon"/>
-        </div>
         
-        <div class="profile-container">
-            <button type="button" class="btn-edit">Edit Profile</button>
+        <div class="content-body">
+            <div class="profile-card">
+                <h3 class="card-title">Basic Information</h3>
+                
+                <div class="profile-layout">
+                    <div class="profile-image-section">
+                        <div class="image-circle">
+                            <img src="../assets/user.png" class="profile-icon-img" alt="Profile Pic">
+                        </div>
+                    </div>
 
-            <button type="button" class="btn-logout">Logout</button>
+                    <div class="profile-info-section">
+                        <div class="info-grid">
+                            <div class="label">Name:</div>
+                            <div class="value">John Dela Cruz</div>
+
+                            <div class="label">Username:</div>
+                            <div class="value">john.123</div>
+
+                            <div class="label">Email:</div>
+                            <div class="value">john@email.com</div>
+
+                            <div class="label">Contact Number:</div>
+                            <div class="value">63987654325</div>
+
+                            <div class="label">Role:</div>
+                            <div class="value">Registrar Administrator</div>
+                        </div>
+
+                        <div class="edit-btn-container">
+                            <button class="btn-edit">Edit Profile</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="logout-container">
+                <button class="btn-logout">Logout</button>
+            </div>
+
         </div>
+    </div>
     </body>
 </html>

@@ -14,7 +14,7 @@
                 <li><a href="../dashboard/dashboard.html">Dashboard</a></li>
                 <li><a href="../requestForm/request.html">Document Requests</a></li>
                 <li><a href="../transaction/transaction.html">Transactions</a></li>
-                <li><a href="">Notifications</a></li>
+                <li><a href="../notifications/notification.html">Notifications</a></li>
                 <li><a href="../adminProfile/adminProfile.html">Profile</a></li>
             </ul>
         </div>
@@ -35,9 +35,23 @@
         </div>
 
         <div class="main-content">
-            <div class="search-bar">
-                <input type="text" placeholder="Search" class="search-bar-input"/>
-                <button type="submit">Search</button>
+            <div class="controls-container">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search here" class="search-input"/>
+                    <button class="btn-search">Search</button>
+                </div>
+
+                <div class="filter-box">
+                    <i class="fa-solid fa-filter filter-icon"></i>
+                    <select class="filter-select">
+                        <option value="all">All</option>
+                        <option value="pending">Pending</option>
+                        <option value="processing">Processing</option>
+                        <option value="approved">Approved</option>
+                        <option value="released">Released</option>
+                        <option value="rejected">Rejected</option>
+                    </select>
+                </div>
             </div>
 
             <div class="transaction-section">
@@ -48,8 +62,8 @@
                             <th>Request ID</th>
                             <th>Requester Name</th>
                             <th>Document Type</th>
-                            <th>Date and Time Processed</th>
-                            <th>Performed by</th>
+                            <th>Date</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -58,8 +72,16 @@
                             <td>REQ001</td>
                             <td>Juan Dela Cruz</td>
                             <td>Transcript of Records</td>
-                            <td>2024-06-15 10:30 AM</td>
-                            <td>Admin User</td>
+                            <td>2024-06-15</td>
+                            <td><button class="btn-view-trans">View Transaction</button></td>
+                        </tr>
+                        <tr>
+                            <td>TXN001</td>
+                            <td>REQ001</td>
+                            <td>Juan Dela Cruz</td>
+                            <td>Transcript of Records</td>
+                            <td>2024-06-15</td>
+                            <td><button class="btn-view-trans">View Transaction</button></td>
                         </tr>
                     </tbody>
                 </table>

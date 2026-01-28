@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Notifications</title>
+        <link rel="stylesheet" href="../notifications/notification.css"/>
+    </head>
+    <body>
+        <div class="sidebar">
+            <ul>
+                <img src="../assets/verifitorlogo.png" class="logo">
+
+                <li><a href="../dashboard/dashboard.html">Dashboard</a></li>
+                <li><a href="../requestForm/request.html">Document Requests</a></li>
+                <li><a href="../transaction/transaction.html">Transactions</a></li>
+                <li><a href="../notifications/notification.html">Notifications</a></li>
+                <li><a href="../adminProfile/adminProfile.html">Profile</a></li>
+            </ul>
+        </div>
+
+        <div class="header">
+            <h2 class="page-title">Dashboard</h2>
+            <img src="../assets/bell_1.png" class="notification">
+            
+            <div class="profile-container">
+                <img src="../assets/user_2.png" class="user" onclick="toggleMenu()">
+
+                <div class="profile-dropdown" id="profileMenu">
+                    <a href="../adminProfile/adminProfile.html">Profile</a>
+                    <a href="">Settings</a>
+                    <a href="../adminlogin/adminlogin.html">Logout</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-wrapper">
+            <div class="content-body">
+                <div class="top-actions">
+                    <button class="btn-mark-read">Mark all as read</button>
+                    <button class="btn-clear">Clear Notifications</button>
+                </div>
+
+                <div class="notification-panel">
+                    <div class="notification-tabs">
+                        <div class="tab active">All Notification</div>
+                        <div class="tab">Unread</div>
+                    </div>
+
+                    <table class="notification-table">
+                        <thead>
+                            <tr>
+                                <th>Status</th>
+                                <th>Notification</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="status-dot unread"></span>Unread</td>
+                                <td>New transcript of record request submitted</td>
+                                <td>January 30, 2026</td>
+                            </tr>
+                            <tr>
+                                <td><span class="status-dot unread"></span>Unread</td>
+                                <td>QR code successfully generated</td>
+                                <td>January 30, 2026</td>
+                            </tr>
+                            <tr>
+                                <td><span class="status-dot unread"></span>Unread</td>
+                                <td>Blockchain submission failed</td>
+                                <td>January 30, 2026</td>
+                            </tr>
+                            <tr>
+                                <td><span class="status-dot unread"></span>Unread</td>
+                                <td>New transcript of record request submitted</td>
+                                <td>January 30, 2026</td>
+                            </tr>
+                            <tr>
+                                <td><span class="status-dot read"></span>Read</td>
+                                <td>New transcript of record request submitted</td>
+                                <td>January 30, 2026</td>
+                            </tr>
+                            <tr>
+                                <td><span class="status-dot read"></span>Read</td>
+                                <td>Blockchain submission failed</td>
+                                <td>January 30, 2026</td>
+                            </tr>
+                            <tr>
+                                <td><span class="status-dot read"></span>Read</td>
+                                <td>New transcript of record request submitted</td>
+                                <td>January 30, 2026</td>
+                            </tr>
+                            <tr>
+                                <td><span class="status-dot unread"></span>Unread</td>
+                                <td>QR code successfully generated</td>
+                                <td>January 30, 2026</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+
+        <script src="../notifications/notification.js"></script>
+    </body>
+</html>

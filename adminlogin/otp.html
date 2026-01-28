@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>One-Time Password</title>
+        <link rel="stylesheet" href="../adminlogin/otp.css"/>
+    </head>
+    <body>
+        <div class="verify-card">
+            
+            <h2 class="otp-heading">Verify OTP</h2>
+            
+            <p class="otp-label">Enter OTP Code</p>
+
+            <form action="../adminlogin/changePassword.html" method="POST" id="otp-form">
+                <div class="otp-inputs">
+                    <input type="text" maxlength="1" class="otp-box" inputmode="numeric">
+                    <input type="text" maxlength="1" class="otp-box" inputmode="numeric">
+                    <input type="text" maxlength="1" class="otp-box" inputmode="numeric">
+                    <input type="text" maxlength="1" class="otp-box" inputmode="numeric">
+                    <input type="text" maxlength="1" class="otp-box" inputmode="numeric">
+                    <input type="text" maxlength="1" class="otp-box" inputmode="numeric">
+                </div>
+
+                <div class="button-container">
+                    <button type="submit" class="btn-verify">Verify</button>
+                </div>
+            </form>
+
+            <a href="#" class="resend-link">Resend OTP</a>
+        </div>
+
+        <div id="error-modal" class="modal-overlay">
+            <div class="modal-box">
+                <div class="modal-icon">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                </div>
+                <h3>Incomplete Code</h3>
+                <p>Please enter the complete 6-digit code to proceed.</p>
+                <button class="btn-modal-close" onclick="closeModal()">OK</button>
+            </div>
+        </div>
+
+        <script src="../adminlogin/otp.js"></script>
+    </body>
+</html>

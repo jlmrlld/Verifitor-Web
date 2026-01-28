@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <title>Admin Login</title>
         <link rel="stylesheet" href="../adminlogin/adminlogin.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     </head>
     <body>
         <div class="login-container">
@@ -13,7 +14,10 @@
                 <form action="../dashboard/dashboard.html" method="POST">
                 <label for="login">Login to your Account</label>
                 <input type="email" id="email" name="email" placeholder="Email" required/>
-                <input type="password" id="password" name="password" placeholder="Password" required/>
+                <div class="input-wrapper">
+                    <input type="password" id="new-password" placeholder="Password" class="form-input-icon" required>
+                    <i class="fa-solid fa-eye-slash toggle-password"></i>
+                </div>
 
                 <a href="../adminlogin/forgotPassword.html" class="forgotPassword">Forgot Password?</a>
 

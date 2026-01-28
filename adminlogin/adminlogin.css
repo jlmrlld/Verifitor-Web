@@ -67,6 +67,26 @@ body {
     background-color: #1a2735;
 }
 
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+/* The Eye Icon */
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 40%;
+    transform: translateY(-50%);
+    color: #777;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.toggle-password:hover {
+    color: #333;
+}
+
 .forgotPassword {
     text-align: right;
     font-size: 12px;
