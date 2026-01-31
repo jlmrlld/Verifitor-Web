@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Transactions</title>
+        <link rel="stylesheet" href="../profileDetails/profileDetails.css"/>
+    </head>
+    <body>
+        <div class="sidebar">
+            <ul>
+                <img src="../assets/verifitorlogo.png" class="logo">
+
+                <li><a href="../dashboard/dashboard.html">Dashboard</a></li>
+                <li><a href="../requestForm/request.html">Document Requests</a></li>
+                <li><a href="../transaction/transaction.html">Transactions</a></li>
+                <li><a href="../notifications/notification.html">Notifications</a></li>
+                <li><a href="../adminProfile/adminProfile.html">Profile</a></li>
+            </ul>
+        </div>
+        
+        <div class="header">
+            <h2 class="page-title">Profile</h2>
+            <img src="../assets/bell_1.png" class="notification">
+            
+            <div class="profile-container">
+                <img src="../assets/user_2.png" class="user" onclick="toggleMenu()">
+
+                <div class="profile-dropdown" id="profileMenu">
+                    <a href="../adminProfile/adminProfile.html">Profile</a>
+                    <a href="">Settings</a>
+                    <a href="../adminlogin/adminlogin.html">Logout</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <h3 class="section-title-large">Admin Profile</h3>
+
+            <div class="profile-card">
+                <h4 class="card-heading">Basic Information</h4>
+                
+                <div class="basic-info-grid">
+                    <div class="photo-section">
+                        <div class="profile-pic-large">
+                            <img src="../assets/user.png" alt="Profile Picture" class="profile-img">
+                        </div>
+                        <a href="#" class="change-photo-link">Change Profile Picture</a>
+                    </div>
+
+                    <div class="form-section">
+                        <div class="form-group">
+                            <label>Name:</label>
+                            <input type="text" value="John Dela Cruz" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Email:</label>
+                            <input type="email" value="john@email.com" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Username:</label>
+                            <input type="text" value="john.123" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Role:</label>
+                            <span class="role-text">Registrar Administrator</span>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn-save-small">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-card">
+                <h4 class="card-heading">Security</h4>
+                
+                <div class="security-form">
+                    <div class="form-group">
+                        <label>Current Password:</label>
+                        <input type="password" placeholder="Current Password" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>New Password:</label>
+                        <input type="password" placeholder="New Password" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>Confirm Password:</label>
+                        <input type="password" placeholder="Confirm Password" class="form-input">
+                    </div>
+                    <div class="card-action">
+                        <button class="btn-save-small">Save</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-actions">
+                <button class="btn-cancel-page" onclick="window.location.href='../adminProfile/adminProfile.html'">Cancel</button>
+                <button class="btn-confirm-page" onclick="window.location.href='../adminProfile/adminProfile.html'">Confirm</button>
+            </div>
+
+        </div>
+
+        <script src="../profileDetails/profileDetails.js"></script>
+    </body>
+</html>

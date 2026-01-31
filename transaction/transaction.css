@@ -193,7 +193,7 @@ body {
 
 .filter-select {
     padding: 8px 15px;
-    width: 120px;
+    width: 200px;
     border: 1px solid #ddd;
     border-radius: 6px;
     background-color: white;
@@ -207,7 +207,7 @@ body {
     margin-left: 310px;
     border-collapse: collapse;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+    border-radius: 12px;
 }
 
 .transaction-table thead tr {
@@ -249,7 +249,7 @@ body {
     font-size: 12px;
     font-weight: 500;
     cursor: pointer;
-    white-space: nowrap; /* Prevents text wrapping */
+    white-space: nowrap;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 

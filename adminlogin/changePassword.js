@@ -10,7 +10,7 @@ toggles.forEach(toggle => {
     });
 });
 
-// Password Validation Logic
+// Password Validation
 const form = document.getElementById('reset-form');
 const passwordInput = document.getElementById('new-password');
 const confirmInput = document.getElementById('confirm-password');

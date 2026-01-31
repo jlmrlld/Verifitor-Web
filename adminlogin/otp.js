@@ -13,7 +13,7 @@ inputs.forEach((input, index) => {
         }
     });
 
-    // Handle Backspace (Go back to previous box)
+    // Handle Backspace
     input.addEventListener('keydown', (e) => {
         if (e.key === 'Backspace' && e.target.value === '' && index > 0) {
             inputs[index - 1].focus();
@@ -35,12 +35,11 @@ form.addEventListener('submit', (e) => {
     }
 });
 
-// Close Modal Logic
+// Close Modal
 function closeModal() {
     modal.classList.remove('show');
 }
 
-// Close if clicking outside the white box
 window.onclick = function(event) {
     if (event.target == modal) {
         closeModal();

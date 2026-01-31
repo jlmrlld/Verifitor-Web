@@ -139,147 +139,161 @@ body {
     border-bottom: 1px solid #eee;
 }
 
-.controls-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* --- PROFILE SPECIFIC STYLES --- */
+.content-wrapper { 
+    padding: 40px; 
+    max-width: 1000px; 
+    margin-left: 300px;
+} /* Center content slightly */
+
+.section-title-large {
+    font-size: 22px;
+    font-weight: 700;
     margin-bottom: 25px;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 50px;
+    color: #000;
 }
 
-.search-bar {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    width: 500px;
-    max-width: 100%;
-    margin-left: 310px;
-}
-
-.search-input {
-    flex: 1;
-    height: 40px;
-    padding: 0 15px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    background-color: #fafafa;
-    font-size: 14px;
-}
-
-.search-bar-input::placeholder {
-    color: #888;
-    font-size: 14px;
-}
-
-.btn-search {
-    background-color: #2c3e50;
-    color: white;
-    border: none;
-    height: 42px;
-    padding: 0 25px;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-.filter-box {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-right: 100px;
-}
-
-.filter-select {
-    padding: 8px 15px;
-    width: 120px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    background-color: white;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-.request-table {
-    width: 70%;
-    margin: 20px auto;
-    margin-left: 310px;
-    border-collapse: collapse;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+/* Card Styles */
+.profile-card {
+    background: white;
     border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border: 1px solid #e0e0e0;
+    margin-bottom: 25px;
 }
 
-.request-table thead tr {
-    background-color: #2c3e50;
+.card-heading {
+    font-size: 18px;
+    margin-bottom: 25px;
+    color: #222;
+}
+
+/* Basic Info Layout */
+.basic-info-grid {
+    display: flex;
+    gap: 50px;
+}
+
+/* Photo Section */
+.photo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+}
+
+/* Update the container to ensure the image fills it */
+.profile-pic-large {
+    width: 120px;
+    height: 120px;
+    background-color: #e0e0e0; 
+    border-radius: 50%;
+    margin-bottom: 15px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* New style for the image itself */
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crucial: This ensures the image covers the circle without squishing */
+    display: block;
+}
+
+.profile-pic-large i {
+    font-size: 80px;
     color: white;
+    margin-top: 10px; /* Slight adjust for silhouette look */
 }
 
-.request-table th {
-    padding: 18px 20px;
-    text-align: left;
-    font-weight: 500;
-    font-size: 16px;
-    font-weight: 500;
+.change-photo-link {
+    color: #5d8aa8;
+    text-decoration: underline;
+    font-size: 13px;
+    cursor: pointer;
 }
 
-.request-table td {
-    padding: 16px 20px;
-    border-bottom: 1px solid #eee;
-    color: #444;
+/* Form Section */
+.form-section, .security-form {
+    flex: 1;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    width: 150px; /* Fixed width for labels */
     font-size: 14px;
-    vertical-align: middle;
+    color: #444;
 }
 
-.request-table tbody tr:hover {
-    background-color: #f9f9f9;
+.form-input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    background-color: #fff;
+    transition: border 0.3s;
 }
 
-.request-table tbody tr:last-child td {
-    border-bottom: none;
+.form-input:focus {
+    border-color: #5d8aa8;
 }
 
-.status-pill {
-    padding: 6px 0;
-    width: 100px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 600;
-    text-align: center;
-    display: inline-block;
+.role-text {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
 }
 
-.status-pill.pending {
-    background-color: #fcf8a0;
-    color: #aeb404;
-    text-transform: uppercase;
+/* Buttons inside cards */
+.card-action {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
 }
 
-.status-pill.processing {
-    background-color: #98fb98;
-    color: #008000;
-    text-transform: uppercase;
-}
-
-.status-pill.approved {
-    background-color: #a6d8ff;
-    color: #0056b3; 
-    text-transform: uppercase;
-}
-
-.btn-view {
-    background-color: #34495e;
+.btn-save-small {
+    background-color: #343a40;
     color: white;
     border: none;
-    padding: 8px 18px;
+    padding: 8px 25px;
     border-radius: 20px;
-    font-size: 12px;
-    font-weight: 500;
+    font-size: 13px;
     cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
-.btn-view:hover {
+/* Page Bottom Actions */
+.page-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn-cancel-page {
+    background-color: #dcdcdc;
+    color: #333;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-confirm-page {
     background-color: #2c3e50;
-    transform: translateY(-1px);
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
 }

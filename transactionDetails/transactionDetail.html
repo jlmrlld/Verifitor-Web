@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Request Details</title>
+        <link rel="stylesheet" href="../transactionDetails/transactionDetails.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </head>
+    <body>
+        <div class="sidebar">
+            <ul>
+                <img src="../assets/verifitorlogo.png" class="logo">
+
+                <li><a href="../dashboard/dashboard.html">Dashboard</a></li>
+                <li><a href="../requestForm/request.html">Document Requests</a></li>
+                <li><a href="../transaction/transaction.html">Transactions</a></li>
+                <li><a href="../notifications/notification.html">Notifications</a></li>
+                <li><a href="../adminProfile/adminProfile.html">Profile</a></li>
+            </ul>
+        </div>
+        
+        <div class="header">
+            <h2 class="page-title">Transactions</h2>
+            <img src="../assets/bell_1.png" class="notification">
+            
+            <div class="profile-container">
+                <img src="../assets/user_2.png" class="user" onclick="toggleMenu()">
+
+                <div class="profile-dropdown" id="profileMenu">
+                    <a href="../adminProfile/adminProfile.html">Profile</a>
+                    <a href="">Settings</a>
+                    <a href="../adminlogin/adminlogin.html">Logout</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+                <h2 class="mono-title">Transaction ID: 1243573a97</h2>
+
+                <div class="transaction-grid">
+                    
+                    <div class="left-col">
+                        
+                        <div class="detail-card">
+                            <h4 class="card-heading">Requester Information</h4>
+                            <div class="info-grid">
+                                <div class="row">
+                                    <span class="label">Request ID:</span>
+                                    <span class="value">REQ1234-2026</span>
+                                </div>
+                                <div class="row">
+                                    <span class="label">Name:</span>
+                                    <span class="value">Juan Dela Cruz</span>
+                                </div>
+                                <div class="row">
+                                    <span class="label">Student ID:</span>
+                                    <span class="value">2023-102347</span>
+                                </div>
+                                <div class="row">
+                                    <span class="label">Program:</span>
+                                    <span class="value">BS Information Technology</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="detail-card">
+                            <h4 class="card-heading">Blockchain Details</h4>
+                            <div class="info-grid">
+                                <div class="row">
+                                    <span class="label">Transaction Hash:</span>
+                                    <span class="value mono">0x683a34fa04</span>
+                                </div>
+                                <div class="row">
+                                    <span class="label">Block Number:</span>
+                                    <span class="value">1234578</span>
+                                </div>
+                                <div class="row">
+                                    <span class="label">Timestamp:</span>
+                                    <span class="value">January 11, 2026 - 10:30am</span>
+                                </div>
+                                <div class="row">
+                                    <span class="label">Verification Status:</span>
+                                    <span class="value green-text"><i class="fa-solid fa-circle-check"></i> Verified</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="detail-card">
+                            <h4 class="card-heading">Document Information</h4>
+                            <div class="file-preview-box">
+                                <i class="fa-solid fa-file-pdf file-icon"></i>
+                                <div class="file-info">
+                                    <div class="file-name">TOR_JuanDelaCruz.pdf</div>
+                                    <div class="file-size">(1.6 MB)</div>
+                                </div>
+                            </div>
+                            <div class="hash-row">
+                                <span class="label">File Hash:</span>
+                                <span class="value mono">1234....0a38f <i class="fa-regular fa-copy copy-icon"></i></span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="right-col">
+                        <div class="detail-card full-height">
+                            <h4 class="card-heading">Status Timeline</h4>
+                            
+                            <div class="timeline">
+                                <div class="timeline-line"></div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-dot grey"></div>
+                                    <div class="timeline-content">
+                                        <div class="t-status">Submitted</div>
+                                        <div class="t-date">January 10, 2026 - 10:30am</div>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-dot yellow"></div>
+                                    <div class="timeline-content">
+                                        <div class="t-status">Pending</div>
+                                        <div class="t-date">January 10, 2026 - 10:30am</div>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-dot neon-green"></div>
+                                    <div class="timeline-content">
+                                        <div class="t-status">Processing</div>
+                                        <div class="t-date">January 10, 2026 - 10:30am</div>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-dot blue"></div>
+                                    <div class="timeline-content">
+                                        <div class="t-status">Approved</div>
+                                        <div class="t-date">January 10, 2026 - 10:30am</div>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-dot grey"></div>
+                                    <div class="timeline-content">
+                                        <div class="t-status">Submit to Blockchain</div>
+                                        <div class="t-date">January 10, 2026 - 10:30am</div>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-dot grey"></div>
+                                    <div class="timeline-content">
+                                        <div class="t-status">QR Generation</div>
+                                        <div class="t-date">January 10, 2026 - 10:30am</div>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-dot orange"></div>
+                                    <div class="timeline-content">
+                                        <div class="t-status">Released</div>
+                                        <div class="t-date">January 10, 2026 - 10:30am</div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <script src="../transactionDetails/transactionDetails.js"></script>
+    </body>
+</html>

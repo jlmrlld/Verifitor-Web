@@ -103,6 +103,21 @@
             </div>
         </div>
 
+        <div id="clear-modal" class="modal-overlay">
+    <div class="modal-box" style="width: 380px; text-align: center;">
+        <i class="fa-solid fa-trash-can" style="font-size: 40px; color: #e74c3c; margin-bottom: 15px;"></i>
+        <h3 class="modal-title">Clear All Notifications?</h3>
+        <p style="font-size: 14px; color: #666; margin-bottom: 25px;">
+            Are you sure you want to remove all notifications? This action cannot be undone.
+        </p>
+        
+        <div class="modal-actions" style="justify-content: center; gap: 15px;">
+            <button class="btn-cancel" onclick="closeClearModal()">Cancel</button>
+            <button class="btn-confirm-danger" id="btn-confirm-clear">Yes, Clear All</button>
+        </div>
+    </div>
+</div>
+
         <script src="../notifications/notification.js"></script>
     </body>
 </html>

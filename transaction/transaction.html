@@ -35,58 +35,75 @@
         </div>
 
         <div class="main-content">
-            <div class="controls-container">
-                <div class="search-bar">
-                    <input type="text" placeholder="Search here" class="search-input"/>
-                    <button class="btn-search">Search</button>
-                </div>
-
-                <div class="filter-box">
-                    <i class="fa-solid fa-filter filter-icon"></i>
-                    <select class="filter-select">
-                        <option value="all">All</option>
-                        <option value="pending">Pending</option>
-                        <option value="processing">Processing</option>
-                        <option value="approved">Approved</option>
-                        <option value="released">Released</option>
-                        <option value="rejected">Rejected</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="transaction-section">
-                <table class="transaction-table">
-                    <thead>
-                        <tr>
-                            <th>Transaction ID</th>
-                            <th>Request ID</th>
-                            <th>Requester Name</th>
-                            <th>Document Type</th>
-                            <th>Date</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>TXN001</td>
-                            <td>REQ001</td>
-                            <td>Juan Dela Cruz</td>
-                            <td>Transcript of Records</td>
-                            <td>2024-06-15</td>
-                            <td><button class="btn-view-trans">View Transaction</button></td>
-                        </tr>
-                        <tr>
-                            <td>TXN001</td>
-                            <td>REQ001</td>
-                            <td>Juan Dela Cruz</td>
-                            <td>Transcript of Records</td>
-                            <td>2024-06-15</td>
-                            <td><button class="btn-view-trans">View Transaction</button></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+    
+    <div class="controls-container">
+        <div class="search-bar">
+            <input type="text" id="transSearchInput" placeholder="Search ID or Name" class="search-input"/>
+            <button class="btn-search">Search</button>
         </div>
+
+        <div class="filter-box">
+            <i class="fa-solid fa-filter filter-icon"></i>
+            
+            <select class="filter-select" id="transFilterSelect">
+                <option value="all">All Documents</option>
+                <option value="transcript">Transcript of Records</option>
+                <option value="diploma">Diploma</option>
+                <option value="form 137">Form 137</option>
+                <option value="good moral">Good Moral</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="transaction-section">
+        <table class="transaction-table">
+            <thead>
+                <tr>
+                    <th>Transaction ID</th>
+                    <th>Request ID</th>
+                    <th>Requester Name</th>
+                    <th>Document Type</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="transactionTableBody">
+                <tr>
+                    <td>TXN001</td>
+                    <td>REQ001</td>
+                    <td>Juan Dela Cruz</td>
+                    <td>Transcript of Records</td>
+                    <td>2024-06-15</td>
+                    <td><button class="btn-view-trans" onclick="window.location.href='../transactionDetails/transactionDetail.html'">View Transaction</button></td>
+                </tr>
+                <tr>
+                    <td>TXN002</td>
+                    <td>REQ002</td>
+                    <td>Maria De Leon</td>
+                    <td>Diploma</td>
+                    <td>2024-06-16</td>
+                    <td><button class="btn-view-trans">View Transaction</button></td>
+                </tr>
+                <tr>
+                    <td>TXN003</td>
+                    <td>REQ003</td>
+                    <td>Jennie Kim</td>
+                    <td>Form 137</td>
+                    <td>2024-06-17</td>
+                    <td><button class="btn-view-trans">View Transaction</button></td>
+                </tr>
+                <tr>
+                    <td>TXN004</td>
+                    <td>REQ004</td>
+                    <td>Nicole Tolentino</td>
+                    <td>Certificate of Good Moral</td>
+                    <td>2024-06-18</td>
+                    <td><button class="btn-view-trans">View Transaction</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 
         <script src="../transaction/transaction.js"></script>
     </body>

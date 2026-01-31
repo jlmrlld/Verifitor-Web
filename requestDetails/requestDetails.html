@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Request Details</title>
+        <link rel="stylesheet" href="../requestDetails/requestDetails.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </head>
+    <body>
+        <div class="sidebar">
+            <ul>
+                <img src="../assets/verifitorlogo.png" class="logo">
+
+                <li><a href="../dashboard/dashboard.html">Dashboard</a></li>
+                <li><a href="../requestForm/request.html">Document Requests</a></li>
+                <li><a href="../transaction/transaction.html">Transactions</a></li>
+                <li><a href="../notifications/notification.html">Notifications</a></li>
+                <li><a href="../adminProfile/adminProfile.html">Profile</a></li>
+            </ul>
+        </div>
+
+        <div class="header">
+            <h2 class="page-title">Document Requests</h2>
+            <img src="../assets/bell_1.png" class="notification">
+            
+            <div class="profile-container">
+                <img src="../assets/user_2.png" class="user" onclick="toggleMenu()">
+
+                <div class="profile-dropdown" id="profileMenu">
+                    <a href="../adminProfile/adminProfile.html">Profile</a>
+                    <a href="">Settings</a>
+                    <a href="../adminlogin/adminlogin.html">Logout</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-body">
+    
+            <h1 class="request-id-heading">Request ID: REQ1234-2026</h1>
+
+            <div class="details-grid-top">
+                <div class="detail-card">
+                    <h3 class="card-heading">Requester Details</h3>
+                    <div class="info-row">
+                        <span class="label">Request ID:</span>
+                        <span class="value">REQ1234-2026</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Name:</span>
+                        <span class="value">Juan Dela Cruz</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Student ID:</span>
+                        <span class="value">2023-102347</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Program:</span>
+                        <span class="value">BS Information Technology</span>
+                    </div>
+                </div>
+
+                <div class="detail-card">
+                    <h3 class="card-heading">Document Details</h3>
+                    <div class="info-row">
+                        <span class="label">Document Type:</span>
+                        <span class="value">Transcript of Record</span>
+                    </div>
+                    <div class="info-row align-center">
+                        <span class="label">Status:</span>
+                        <span id="status-pill" class="status-pill pending">Pending</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Processed Date:</span>
+                        <span id="processed-date" class="value">---</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-card payment-card" id="payment-card">
+                <h3 class="card-heading">Payment Details</h3>
+                <div class="payment-grid">
+                    <div class="payment-item">
+                        <div class="sub-label">Payment Method</div>
+                        <div class="sub-value">Gcash</div>
+                    </div>
+                    <div class="payment-item">
+                        <div class="sub-label">Status</div>
+                        <div class="sub-value status-paid">
+                            <i class="fa-solid fa-circle-check"></i> Paid
+                        </div>
+                    </div>
+                    <div class="payment-item">
+                        <div class="sub-label">Amount Paid</div>
+                        <div class="sub-value">₱150.00</div>
+                    </div>
+                    <div class="payment-item">
+                        <div class="sub-label">Reference No.</div>
+                        <div class="sub-value">1234578839</div>
+                    </div>
+                    <div class="payment-item">
+                        <div class="sub-label">Date Paid</div>
+                        <div class="sub-value">January 15, 2026</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-card validation-card" id="validation-card">
+                <h3 class="card-heading">Validation</h3>
+                <div class="validation-grid">
+                    <div class="validation-item">
+                        <div class="sub-label">Hash Status:</div>
+                        <div class="sub-value">---</div>
+                    </div>
+                    <div class="validation-item">
+                        <div class="sub-label">Blockchain Status:</div>
+                        <div class="sub-value">---</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="action-buttons-container" class="action-buttons-container">
+                <button class="btn-reject" onclick="openRejectModal()">Reject Request</button>
+                <button class="btn-approve" onclick="approveRequest()">Approve Request</button>
+            </div>
+
+            <!-- UPLOAD TOR -->
+            <div id="upload-modal" class="modal-overlay">
+                <div class="modal-box upload-box">
+                    <h3 class="modal-title">Upload TOR Files</h3>
+                    
+                    <input type="file" id="fileInput" style="display: none;" accept=".pdf" multiple onchange="handleFiles(this.files)">
+
+                    <div class="drop-zone" onclick="document.getElementById('fileInput').click()">
+                        <i class="fa-solid fa-cloud-arrow-up cloud-icon"></i>
+                        <p class="drop-text"><strong>Drag & drop your PDF files here or click to browse.</strong></p>
+                        <p class="drop-subtext">Supported format: PDF only. Max size: 100Mb per file</p>
+                    </div>
+
+                    <div id="file-list-container" class="file-list-container">
+                        </div>
+
+                    <div class="checkbox-group upload-confirm">
+            <input type="checkbox" id="upload-confirm-check">
+            <label for="upload-confirm-check">I confirm that the selected files are correct and complete.</label>
+        </div>
+
+                    <div class="modal-actions">
+                        <button class="btn-cancel" onclick="closeUploadModal()">Cancel</button>
+                        <button class="btn-confirm" id="btn-upload-confirm" onclick="confirmUpload()" disabled>Confirm</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GENERATE HASH -->
+            <div id="hash-modal" class="modal-overlay">
+                <div class="hash-card"> <h3 class="modal-title">Confirm Document Hash</h3>
+                    
+                    <div class="hash-body">
+                        
+                        <div class="hash-group">
+                            <label class="hash-label">Document:</label>
+                            <div class="file-display">
+                                <i class="fa-solid fa-file-pdf pdf-icon"></i>
+                                <span class="file-name-text">Transcript_of_Record_REQ1234-2026.pdf</span>
+                            </div>
+                        </div>
+
+                        <div class="hash-group">
+                            <label class="hash-label">Generated Hash:</label>
+                            <div class="hash-code">0x12345......96a7</div>
+                        </div>
+
+                        <div class="hash-note">
+                            <span>*Note:</span>
+                        </div>
+
+                    </div>
+
+                    <div class="modal-actions">
+                        <button class="btn-cancel" onclick="closeHashModal()">Cancel</button>
+                        <button class="btn-confirm" onclick="confirmHash()">Confirm</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCKCHAIN MODAL -->
+             <div id="blockchain-modal" class="modal-overlay">
+                <div class="modal-box blockchain-box">
+                    <h3 class="modal-title">Submit to Blockchain</h3>
+                    
+                    <p class="reminder-text">
+                        Reminder: Submission to the blockchain is a permanent and immutable action. Once confirmed, this record cannot be altered, deleted, or reversed by anyone, including administrators. Please ensure all details are absolutely correct before proceeding.
+                    </p>
+
+                    <h4 class="details-heading">Transcript Details:</h4>
+                    <div class="blockchain-details-grid">
+                        <div class="bd-row">
+                            <span class="bd-label">Name:</span> 
+                            <span class="bd-value">Alyssa Jane Cruz</span>
+                        </div>
+                        <div class="bd-row">
+                            <span class="bd-label">Request ID:</span> 
+                            <span class="bd-value">REQ1234-2026</span>
+                        </div>
+                        <div class="bd-row">
+                            <span class="bd-label">File:</span> 
+                            <span class="bd-value">Transcript_of_Record_REQ1234-2026.pdf</span>
+                        </div>
+                        <div class="bd-row">
+                            <span class="bd-label">Hash:</span> 
+                            <span class="bd-value hash-font">0x12345......967</span>
+                        </div>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="confirm-check">
+                        <label for="confirm-check">I confirm that all details are correct and final.</label>
+                    </div>
+
+                    <div class="modal-actions">
+                        <button class="btn-cancel" onclick="closeBlockchainModal()">Cancel</button>
+                        
+                        <button class="btn-submit-final" id="btn-blockchain-submit" onclick="confirmBlockchain()" disabled>
+                            Submit to Blockchain
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GENERATE QR -->
+             <div id="qr-modal" class="modal-overlay">
+                <div class="modal-box qr-box">
+                    <h3 class="modal-title">Generate Verification QR Code</h3>
+                    <p class="qr-subtitle">QR code is successfully generated.</p>
+
+                    <div class="qr-image-container">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=VerifitorDocumentHash0x12345" alt="QR Code" class="qr-code-img">
+                    </div>
+
+                    <p class="qr-helper-text">Scan this QR to verify the authenticity of this Transcript of Record</p>
+
+                    <div class="details-box-gray">
+                        <h4 class="details-box-title">Transcript Details:</h4>
+                        
+                        <div class="db-row">
+                            <span class="db-label">Name:</span> 
+                            <span class="db-value">Alyssa Jane Cruz</span>
+                        </div>
+                        <div class="db-row">
+                            <span class="db-label">Request ID:</span> 
+                            <span class="db-value">REQ1234-2026</span>
+                        </div>
+                        <div class="db-row">
+                            <span class="db-label">File:</span> 
+                            <span class="db-value">Transcript_of_Record_REQ1234-2026.pdf</span>
+                        </div>
+                        <div class="db-row">
+                            <span class="db-label">Blockchain Transaction Hash:</span> 
+                            <span class="db-value mono">0x12345......967</span>
+                        </div>
+                    </div>
+
+                    <div class="modal-actions">
+                        <button class="btn-cancel" onclick="finishQrSequence()">Cancel</button>
+                        <button class="btn-download" onclick="finishQrSequence()">Download QR Code</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RELEASE DOCUMENT -->
+            <div id="release-modal" class="modal-overlay">
+                <div class="modal-box release-box">
+                    <h3 class="modal-title">Release Document</h3>
+                    <p class="qr-subtitle">The Transcript of Record is ready to be released.</p>
+
+                    <div class="details-box-gray">
+                        <h4 class="details-box-title">Transcript Details:</h4>
+                        <div class="db-row">
+                            <span class="db-label">Name:</span> 
+                            <span class="db-value">Alyssa Jane Cruz</span>
+                        </div>
+                        <div class="db-row">
+                            <span class="db-label">Request ID:</span> 
+                            <span class="db-value">REQ1234-2026</span>
+                        </div>
+                        <div class="db-row">
+                            <span class="db-label">File:</span> 
+                            <span class="db-value">Transcript_of_Record_REQ1234-2026.pdf</span>
+                        </div>
+                        <div class="db-row">
+                            <span class="db-label">Blockchain Transaction Hash:</span> 
+                            <span class="db-value mono">0x12345......967</span>
+                        </div>
+                    </div>
+
+                    <p class="release-note">
+                        <strong>Note:</strong> You are about to release this verified Transcript of Records to the student. Once released, the document will be accessible to the requester and cannot be modified.
+                    </p>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="release-check">
+                        <label for="release-check">I confirm that this transcript is final and ready for release.</label>
+                    </div>
+
+                    <div class="modal-actions">
+                        <button class="btn-cancel" onclick="closeReleaseModal()">Cancel</button>
+                        <button class="btn-confirm" id="btn-release-confirm" onclick="finalReleaseAction()" disabled>Confirm</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- REJECT DOCUMENT -->
+            <div id="reject-modal" class="modal-overlay">
+                <div class="modal-box reject-box">
+                    <h3 class="modal-title">Reject Request: REQ1234....2026</h3>
+                    
+                    <div class="input-group">
+                        <label class="input-label">Reason for Rejection:</label>
+                        <select class="modal-input" id="reject-reason">
+                            <option value="" disabled selected>Reason</option>
+                            <option value="incomplete">Incomplete Documents</option>
+                            <option value="invalid">Invalid Information</option>
+                            <option value="other">Others</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label">If others please specify:</label>
+                        <textarea class="modal-input textarea-input" id="reject-text-input" placeholder="Please specify reason..." disabled></textarea>
+                    </div>
+
+                    <div class="checkbox-group refund-warning">
+                        <input type="checkbox" id="reject-refund-check">
+                        <label for="reject-refund-check">
+                            I confirm that rejecting this request will automatically refund the payment (₱150.00) to the requester.
+                        </label>
+                    </div>
+
+                    <div class="modal-actions">
+                        <button class="btn-cancel" onclick="closeRejectModal()">Cancel</button>
+                        <button class="btn-confirm-dark" id="btn-reject-confirm" onclick="confirmReject()" disabled>Confirm</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <script src="../requestDetails/requestDetails.js"></script>
+    </body>
+</html>
